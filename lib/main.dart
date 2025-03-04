@@ -1,41 +1,64 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MiEjemplo());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+class MiEjemplo extends StatelessWidget {
+  const MiEjemplo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Ejemplo de contenedores'),
+          titleTextStyle: TextStyle(color: Colors.white, fontSize: 20),
+          backgroundColor: Colors.blue,
+        ),
+        body: Column(
+          children: [
+            Container(
+              width: double.infinity,
+              height: 50,
+              color: Colors.red,
+              child: Center(
+                child: Text(
+                  'CONTENEDOR 1',
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 50),
+            Container(
+              width: 150,
+              height: 200,
+              color: Colors.blue,
+              child: Center(
+                child: Text(
+                  'CONTENEDOR 2',
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 50),
+            Container(
+              width: double.infinity,
+              height: 220,
+              color: Colors.yellow,
+              child: Center(
+                child: Text(
+                  'CONTENEDOR 3',
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
